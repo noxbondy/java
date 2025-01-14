@@ -1,40 +1,25 @@
-
-
-import java.util.Scanner;
+import org.example.BankAccount;
 
 public class Main {
     public static void main(String[] args) {
-        int num1 = 0;
-        int num2 = 0;
-        Scanner scan = new Scanner(System.in);
-        System.out.print("input 1st integer: ");
-        num1 = scan.nextInt();
-        System.out.print("input 2nd integer: ");
-        num2 = scan.nextInt();
+        BankAccount account1 = new BankAccount();
+        account1.accountHolder="Noxbondy";
+        account1.balance =100.00;
+        BankAccount account2 = new BankAccount();
+        account2.accountHoler ="NOur";
+        account2.balance =100.00;
+        BankAccount.interesRate =6.8;
+        account1.displayAccountinfo();
+        account2.displayAccountinfo();
+        account1.deposit(100.00);
+        account1.withdraw(200);
+        account1.dispalyAccountinfo();
+        System.out.println("Total Loan Repayment Amount: " + BankAccount.calculateLoanPayment(10000, 2));
 
-        int operator ;
-        double answer = 0;
-        System.out.println("Enter operator: ");
-        System.out.println("1.+ ");
-        System.out.println("2.- ");
-        System.out.println("3.* ");
-        System.out.println("4.% ");
-        operator = scan.nextInt();
-        switch (operator) {
-            case 1:
-                answer = num1 + num2;
-                break;
-                case 2:
-                    answer = num1 - num2;
-                    break;
-                    case 3:
-                        answer = num1 * num2;
-                        break;
-                        case 4:
-                            answer = num1 / num2;
-                            break;
-        }
-        System.out.println("Answer: " + answer);
+
+
+
+
 
     }
 }
